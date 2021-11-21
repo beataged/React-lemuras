@@ -1,23 +1,40 @@
-import SmallSquare from "./Components/Start2/SmallSquare";
-import digitSqares from "./Data/digitSqares";
+import React from "react";
 
-function App(){
+class App extends React.Component {
 
-    return(
-        <div className="App">
-            <div className="big-blue">
-                <SmallSquare color={'crimson'} number={5}></SmallSquare>
-                <SmallSquare color={'orange'} number={7}></SmallSquare>
-                <SmallSquare color={'lime'} number={8}></SmallSquare>
-                <SmallSquare color={'brown'} number={19}></SmallSquare>
-            </div>
-            <div className="big-blue">
-                {
-                    digitSqares.map((s, i) => <SmallSquare key={i} color={s.color} number={s.number}></SmallSquare>)
-                }
-            </div>
+    constructor(props){
+        super(props);
+        this.state = {books: []};
+    }
+
+    componentDidMount(){
+
+    }
+
+  render() {
+
+
+    if(this.state.books.length){
+ 
+    return (
+      <div className="App">
+        <div className="big-blue">
+
         </div>
-    )
+    
+      </div>
+    );
+  }
+else{
+    return (
+        <div className="App">
+          <div className="big-blue">
+  
+          </div>
+      
+        </div>
+      );
+}
 }
 
 export default App;
